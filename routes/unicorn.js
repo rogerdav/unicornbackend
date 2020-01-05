@@ -6,7 +6,14 @@ const Unicorn = require('../model/unicorn');
 
 module.exports = router => {
 
-  
+  router.post('/unicorn/',bodyParser,(req, res) => {
+    let tempUnicorn = new Unicorn(req.body);
+    return tempUnicorn.save()
+      .then(user => {
+        res.status(201).json(user);
+      })
+      .catch(() => res.send(400));
+  });
 
   router.get('/unicorn/', bodyParser, (req, res) => {
     Unicorn.find()
