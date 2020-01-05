@@ -9,16 +9,24 @@ module.exports = router => {
   router.post('/unicorn/',bodyParser,(req, res) => {
     let tempUnicorn = new Unicorn(req.body);
     return tempUnicorn.save()
-      .then(user => {
-        res.status(201).json(user);
+      .then(unicorn => {
+        res.status(201).json(unicorn);
       })
       .catch(() => res.send(400));
   });
 
   router.get('/unicorn/', bodyParser, (req, res) => {
     Unicorn.find()
-      .then(user => {
-        res.status(200).json(user);
+      .then(unicorns => {
+        res.status(200).json(unicorns);
+      })
+      .catch(() => res.send(400));
+  });
+
+  router.put('/unicorn/', bodyParser, (req, res) => {
+    Unicorn.updateOne({ name: `${req.body.name}`}, {location: `${req.body.location}`})
+      .then(unicorn => {
+        res.status(204).json(unicorn);
       })
       .catch(() => res.send(400));
   });
