@@ -25,8 +25,8 @@ module.exports = router => {
 
   router.put('/unicorn/', bodyParser, (req, res) => {
     Unicorn.updateOne({ name: `${req.body.name}`}, {location: `${req.body.location}`})
-      .then(unicorn => {
-        res.status(204).json(unicorn);
+      .then(() => {
+        res.sendStatus(204);
       })
       .catch(() => res.send(400));
   });
