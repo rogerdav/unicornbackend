@@ -11,6 +11,7 @@ const entryNZ = mongoose.Schema({
   floor: {type: String},
   parking: {type: Boolean},
   vrn: {type: String},
+  found: {type: Boolean},
 
 }, {timestamps: true});
 
