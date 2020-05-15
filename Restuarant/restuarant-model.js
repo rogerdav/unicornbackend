@@ -7,7 +7,7 @@ const Restuarant = mongoose.Schema ({
   email: {type: String},
   tel: {type: String},
   address: {type: String},
-  
+  menu: {type: String},
 
 }, {timestamps: true});
 

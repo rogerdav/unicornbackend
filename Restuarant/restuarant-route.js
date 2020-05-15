@@ -2,7 +2,7 @@
 
 const bodyParser = require('body-parser').json();
 
-const Restuarant = require('../model/restuarant');
+const Restuarant = require('./restuarant-model');
 
 module.exports = router => {
 

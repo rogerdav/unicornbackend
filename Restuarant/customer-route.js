@@ -1,7 +1,7 @@
 'use strict';
 
 const bodyParser = require('body-parser').json();
-const Customer = require('../model/res-cust');
+const Customer = require('./customer-model');
 const accountSid = process.env.ACCOUNT_SID;
 const authToken = process.env.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);

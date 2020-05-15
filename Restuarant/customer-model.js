@@ -7,6 +7,7 @@ const RestCust = mongoose.Schema ({
   email: {type: String},
   tel: {type: String},
   table: {type: String},
+  
   restuarant: {type: mongoose.Schema.Types.ObjectId,  ref: 'restuarant'},
 
 }, {timestamps: true});
